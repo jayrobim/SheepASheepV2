@@ -1,0 +1,22 @@
+syntax = "proto3";
+package map;
+
+message GameMap {
+  int32 widthNum = 1;
+  int32 heightNum = 2;
+  int32 levelKey = 3;
+  map<string, int32> blockTypeData = 4;
+  map<string, NodeList> levelData = 5;
+}
+
+message NodeList{
+  repeated Node node = 1;
+}
+message Node{
+  string id = 1;
+  int32 type = 2;
+  int32 rolNum = 3;
+  int32 rowNum = 4;
+  int32 layerNum = 5;
+  int32 moldType = 6;
+}
