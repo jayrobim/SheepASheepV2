@@ -101,7 +101,7 @@ async function topicJoinSide(token, side) {
 
   var config = {
     method: "post",
-    url: `${BASE_URL}/topic/game_join?`,
+    url: `${BASE_URL}/world/game_join?`,
     headers: {
       Connection: "keep-alive",
       t: token,
