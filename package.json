@@ -1,0 +1,38 @@
+{
+  "dependencies": {
+    "axios": "^1.1.2",
+    "protobufjs": "^7.1.2",
+    "socket.io": "^4.5.3"
+  },
+  "name": "sheepasheepv2",
+  "description": "whatever",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AdamYoung1234/SheepASheepV2.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AdamYoung1234/SheepASheepV2/issues"
+  },
+  "homepage": "https://github.com/AdamYoung1234/SheepASheepV2#readme",
+  "optionalDependencies": {
+    "bufferutil": "^4.0.6",
+    "utf-8-validate": "^5.0.9"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  },
+  "nodemonConfig": {
+    "ignore": [
+      "**/html/**"
+    ],
+    "delay": 2500
+  }
+}

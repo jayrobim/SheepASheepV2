@@ -1,0 +1,7 @@
+version: '3'
+services:
+  sheep:
+    build: .
+    ports:
+      - "8080:80"
+      - "3500:3500"
