@@ -4,6 +4,29 @@ const { getRandom,MapInfoToStr } = require("../utils/helpers");
 const BASE_URL = "https://cat-match.easygame2021.com/sheep/v1/game";
 const STATIC_ASSETS_URL = "https://cat-match-static.easygame2021.com";
 
+const getPersonalInfo = async (token) => {
+    const config = {
+        method: "get",
+        url: `${BASE_URL}/personal_info`,
+        headers: {
+            Connection: "keep-alive",
+            t: token,
+            "content-type": "application/json",
+            "User-Agent":
+                "Mozilla/5.0 (iPhone; CPU iPhone OS 16_0_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 MicroMessenger/8.0.29(0x18001d2c) NetType/WIFI Language/zh_CN",
+            Referer:
+                "https://servicewechat.com/wx141bfb9b73c970a9/34/page-frame.html",
+        },
+    };
+
+    try {
+        const response = await axios(config);
+        return response.data;
+    } catch (err) {
+        console.log(err);
+    }
+};
+
 const getMapInfo = async (token, isTopic) => {
   const config = {
     method: "get",
@@ -136,6 +159,7 @@ const getMapFromMD5 = async (md5) => {
 };
 
 module.exports = {
+  getPersonalInfo,
   getMapFromMD5,
   sendMatchInfo,
   getMapInfo,
