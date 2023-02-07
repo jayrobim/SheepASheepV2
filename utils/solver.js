@@ -2,6 +2,7 @@ const { exit } = require("process");
 const { performance } = require("perf_hooks");
 const { getMap } = require("./mapUtils");
 const {
+  getPersonalInfo,
   getMapInfo,
   getTopicInfo,
   topicJoinSide,
@@ -98,7 +99,7 @@ const initializeTopic = async (token) => {
 const initialize = async (token, isTopic = false) => {
   console.log(">> 初始化地图信息 <<");
   if (isTopic) {
-    await initializeTopic(token);
+    // await initializeTopic(token);
   }
   console.log("获取地图信息");
   const mapInfoData = await getMapInfo(token, isTopic);
@@ -185,6 +186,9 @@ const main = async (isTopic) => {
   console.log("===================================");
   try {
     console.log("token 过期时间:", getExpirationDateFromToken(token));
+    console.log("===================================");
+    const personalInfo = await getPersonalInfo(token)
+    console.log("账号昵称：",personalInfo.data.nick_name)
     console.log("===================================");
     await delay(3);
   } catch (e) {
