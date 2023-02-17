@@ -87,7 +87,7 @@ async function sendMatchInfo(token, mapSeed2, matchPlayInfo, isTopic = false) {
     },
     data,
   };
-
+  console.log(data)
   const response = await axios(config);
 
   return response.data;
