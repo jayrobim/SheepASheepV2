@@ -66,11 +66,11 @@ async function sendMatchInfo(token, mapSeed2, matchPlayInfo, isTopic = false) {
         rank_score: 1,
         rank_state: 1,
         rank_time: getRandom(300, 600),
-        rank_role: 2,
+        rank_role: 1,
         skin: 1,
-        MatchPlayInfo: matchPlayInfo,
-        MapSeed2: mapSeed2,
-        Version: "0.0.1",
+        play_info: matchPlayInfo,
+        map_seed_2: mapSeed2,
+        version: "167",
       });
 
   var config = {
